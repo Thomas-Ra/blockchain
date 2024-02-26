@@ -1,7 +1,8 @@
 import random
-random.seed(0) # uses 0 to make the random numbers predictable
 
-def makeTransaction(maxValue = 3):
+random.seed(0)
+
+def makeTransaction(maxValue):
     """ method to generate exchanges between two (and only two) personas
     depostits will be positive, withdrawls negative
     no money can be created or destroyed
