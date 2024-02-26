@@ -1,5 +1,5 @@
 import random
-random.seed(0)
+random.seed(0) # uses 0 to make the random numbers predictable
 
 def makeTransaction(maxValue = 3):
     """ method to generate exchanges between two (and only two) personas
@@ -8,10 +8,12 @@ def makeTransaction(maxValue = 3):
     """
 
     #choose either -1 or 1
-    sign = int(random.getrandbits(1))*2 - 1
+    sign = int(random.getrandbits(1)) * 2 - 1
     amount = random.randint(1, maxValue)
     alicePays = sign * amount
     bobPays = -1 * alicePays
+
+    # print("Alice pays: ", alicePays, "Bob pays: ", bobPays)
 
     return {u'Alice': alicePays, u'Bob': bobPays}
 
@@ -48,7 +50,10 @@ def isValidTxn(txn, state):
         
     return True
 
-#testing the method to validate transactions
+#create a set of transactions
+# txnBuffer = [makeTransaction() for i in range(30)]
+
+"""testing the method to generate transactions
 state = {u'Alice':5, u'Bob':5}
 print("\nAlice and Bob start both with 5 money! First transaction Alice gives 3 money to bob.")
 print(isValidTxn({u'Alice': -3, u'Bob': 3},state))
@@ -69,3 +74,4 @@ print("New users can be created. Only 10 money is in the system.")
 print("\nBob magically gets an additional money to his funds.")
 print(isValidTxn({u'Alice': -4, u'Bob': 3,'Lisa':2},state)) # But the same rules still apply!
 print("Fails. Sum of all money would be 11 and not 10.")
+"""
