@@ -61,14 +61,13 @@ def processTransactions(txnBuffer, blockSizeLimit, state):
                 
     return txnList, state
 
-
-def makeBlockWithRandomTxns(state, chain, blockSizeLimit):
+def makeBlockWithRandomTxns(state, chain, blockSizeLimit, maxTnxsValue):
     """ method to create a block with a set of transactions
     create a set of transactions
     should be the same as the blocksize limit so that the transactions fit into one block
     otherwise you will need to create more blocks
     """
-    txnBuffer = [makeTransaction() for i in range(blockSizeLimit)] 
+    txnBuffer = [makeTransaction(maxTnxsValue) for i in range(blockSizeLimit)] 
     txnList, state = processTransactions(txnBuffer, blockSizeLimit, state)
 
     myBlock = makeBlock(txnList, chain) # make a block
