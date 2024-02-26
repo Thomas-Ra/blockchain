@@ -3,11 +3,13 @@ This project aims to build the founding blocks of any blockchain to gain a deepe
 
 Currently, it consists of four classes.
 
-The blockchain.py class handles the blockchain itself and, most notably, has a method to generate hashes and build the blocks of the blockchain.
+blockchain.py class handles the blockchain itself and, most notably, has a method to generate hashes and build the blocks of the blockchain.
 
 transactions.py can handle transactions between two users of the blockchain.
 
 validations.py handles the validity of blocks, transactions and the chain itself.
+
+mode.py is for possible future work to include other nodes in the blockchain.
 
 demoChain.py is a working example of the classes working together.
 
